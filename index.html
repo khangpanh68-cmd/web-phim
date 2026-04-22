@@ -3,25 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Khang Panh68</title>
+
+<link rel="icon" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+<circle cx='50' cy='50' r='48' fill='black'/>
+<text x='50' y='62' font-size='50' fill='red' text-anchor='middle'>KP</text>
+</svg>">
 
 <style>
 
 body{
   margin:0;
   font-family:Arial;
-  background:#111;
+  background:#0b0b0b;
   color:white;
 }
 
-nav{
-  padding:10px;
+/* 🎬 INTRO 3D */
+#intro{
+  position:fixed;
+  inset:0;
   background:black;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  animation:fadeOut 3s forwards;
+  animation-delay:2s;
+}
+
+.logo3d{
+  font-size:70px;
+  font-weight:bold;
+  color:red;
+  text-shadow:0 0 20px red,0 0 40px darkred;
+  animation:spin3d 2s linear infinite, zoom 2s infinite;
+}
+
+@keyframes spin3d{
+  0%{transform:rotateY(0deg);}
+  50%{transform:rotateY(180deg);}
+  100%{transform:rotateY(360deg);}
+}
+
+@keyframes zoom{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+  100%{transform:scale(1);}
+}
+
+@keyframes fadeOut{
+  to{opacity:0;visibility:hidden;}
+}
+
+/* HEADER */
+header{
+  background:#000;
+  padding:12px;
   text-align:center;
 }
 
-nav h2{
+.logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-box{
+  width:42px;
+  height:42px;
+  background:linear-gradient(45deg,red,darkred);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  box-shadow:0 0 15px red;
+}
+
+/* 🔥 CHỮ CHẠY NGANG */
+.marquee{
+  width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  background:#111;
   color:red;
+  font-weight:bold;
+  padding:8px 0;
+  border-top:1px solid #222;
+  border-bottom:1px solid #222;
+}
+
+.marquee span{
+  display:inline-block;
+  padding-left:100%;
+  animation:run 12s linear infinite;
+}
+
+@keyframes run{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-100%);}
 }
 
 /* SEARCH */
@@ -29,88 +113,54 @@ nav h2{
   padding:10px;
   background:#1a1a1a;
 }
-
 .bar input{
   width:100%;
-  padding:8px;
-  margin-bottom:5px;
+  padding:10px;
   border:none;
-  border-radius:6px;
+  border-radius:8px;
 }
-
-.bar button{
-  padding:8px;
-  margin:3px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-  color:white;
-}
-
-.yt{background:red;}
-.zing{background:#1db954;}
 
 /* PLAYLIST */
-.playlist{
+.playlists{
+  display:flex;
+  gap:8px;
   padding:10px;
-  background:#181818;
-  margin:10px;
-  border-radius:10px;
+  overflow-x:auto;
 }
-
-.playlist button{
-  padding:6px 10px;
-  margin:5px;
+.playlists button{
+  padding:8px 14px;
   border:none;
-  border-radius:6px;
-  cursor:pointer;
-  background:#ff0000;
+  border-radius:20px;
+  background:#333;
   color:white;
 }
 
-/* GRID 3 CỘT */
-.scroll{
+/* GRID */
+.grid{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
   gap:10px;
   padding:10px;
 }
 
 .card{
-  position:relative;
+  cursor:pointer;
+  transition:0.2s;
 }
+.card:hover{transform:scale(1.05);}
 
 .card img{
   width:100%;
-  border-radius:8px;
-  cursor:pointer;
-  aspect-ratio:2/3;
+  height:160px;
   object-fit:cover;
+  border-radius:10px;
 }
 
-.star{
-  position:absolute;
-  top:5px;
-  right:5px;
-  background:gold;
-  color:black;
-  border:none;
-  border-radius:50%;
-  width:25px;
-  height:25px;
-  cursor:pointer;
-}
-
-/* FAVORITE */
-.fav{
-  padding:10px;
-  background:#222;
-}
-
-.fav img{
-  width:70px;
-  margin:5px;
-  border-radius:6px;
+.title{
+  font-size:11px;
+  text-align:center;
+  margin-top:4px;
+  min-height:30px;
 }
 
 /* PLAYER */
@@ -121,13 +171,25 @@ nav h2{
   display:none;
   align-items:center;
   justify-content:center;
+  z-index:999;
 }
 
 #modal iframe{
   width:95%;
+  max-width:800px;
   height:260px;
   border:none;
-  border-radius:10px;
+  border-radius:12px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:15px;
+  font-size:12px;
+  color:#777;
+  border-top:1px solid #222;
+  background:#0a0a0a;
 }
 
 </style>
@@ -135,144 +197,114 @@ nav h2{
 
 <body>
 
-<nav>
-  <h2>🎬 Khang Panh68</h2>
-</nav>
+<!-- 🎬 INTRO -->
+<div id="intro">
+  <div class="logo3d">KP</div>
+</div>
 
-<!-- SEARCH -->
+<header>
+  <div class="logo">
+    <div class="logo-box">KP</div>
+    <h2 style="color:red;margin:0;">Khang Panh68 Studio</h2>
+  </div>
+</header>
+
+<!-- 🔥 MARQUEE -->
+<div class="marquee">
+  <span>
+    🔥 Hành động • ⚔️ Chiến tranh • 🤖 AI đề xuất • 🎬 Phim hot • Khang Panh68 Studio • 🔥 Hành động • ⚔️ Chiến tranh • 🤖 AI đề xuất • 🎬 Phim hot • Khang Panh68 Studio
+  </span>
+</div>
+
 <div class="bar">
-
-  <input id="ytInput" placeholder="🔎 YouTube search...">
-  <button class="yt" onclick="searchYT()">YouTube</button>
-
-  <input id="zingInput" placeholder="🎧 Zing MP3 search...">
-  <button class="zing" onclick="searchZing()">Zing MP3</button>
-
+  <input id="search" placeholder="🔎 Tìm phim..." oninput="searchMovie()">
 </div>
 
-<!-- PLAYLIST -->
-<div class="playlist">
-  <h3>📂 Playlist</h3>
-  <button onclick="openPlaylist('PLirxsEkduv0MwqEs1GKjt7JOupkWA8yNr')">Playlist 1</button>
-  <button onclick="openPlaylist('PLh4trvZExvP1Gmnf0pbRrfIdsQQFjzMdn')">Playlist 2</button>
-  <button onclick="openPlaylist('PLh4trvZExvP2UKz1LBOjt0n266zeL80ze')">Playlist 3</button>
+<div class="playlists">
+  <button onclick="setList('all')">🔥 Tất cả</button>
+  <button onclick="setList('action')">💥 Hành động</button>
+  <button onclick="setList('war')">⚔️ Chiến tranh</button>
+  <button onclick="setList('ai')">🤖 AI đề xuất</button>
 </div>
 
-<!-- FAVORITE -->
-<div class="fav">
-  <h3>💾 Phim đã lưu</h3>
-  <div id="favList"></div>
-</div>
+<div class="grid" id="list"></div>
 
-<!-- MOVIES -->
-<div class="scroll" id="list"></div>
-
-<!-- PLAYER -->
 <div id="modal" onclick="closeM()">
   <iframe id="frame" allow="autoplay"></iframe>
 </div>
 
+<footer>
+  © Bản quyền thuộc về Khang Nguyễn – Thiết kế Khang Panh68 🎬
+</footer>
+
 <script>
 
-/* 💀 FULL VIDEO DATA (ĐÃ FIX KHÔNG MẤT) */
-let movies = [
-  {title:"Video 1",img:"https://img.youtube.com/vi/eZO29UZ28M4/hqdefault.jpg",video:"eZO29UZ28M4"},
-  {title:"Video 2",img:"https://img.youtube.com/vi/9re7ISfjOkg/hqdefault.jpg",video:"9re7ISfjOkg"},
-  {title:"Video 3",img:"https://img.youtube.com/vi/AXHRGAfCIhE/hqdefault.jpg",video:"AXHRGAfCIhE"},
-  {title:"Video 4",img:"https://img.youtube.com/vi/xSasYrFxbnE/hqdefault.jpg",video:"xSasYrFxbnE"},
-  {title:"Video 5",img:"https://img.youtube.com/vi/G3G7QRs90HU/hqdefault.jpg",video:"G3G7QRs90HU"},
-  {title:"Video 6",img:"https://img.youtube.com/vi/9rDQedYo27k/hqdefault.jpg",video:"9rDQedYo27k"},
+/* 🎬 19 PHIM VIỆT HOÁ */
+const movies = [
+{title:"Quá Nhanh Quá Nguy Hiểm: Đường Đua Tử Thần",tag:"action",id:"eZO29UZ28M4"},
+{title:"Biệt Đội Siêu Anh Hùng",tag:"action",id:"9re7ISfjOkg"},
+{title:"Sát Thủ John Wick",tag:"action",id:"AXHRGAfCIhE"},
+{title:"Người Nhện: Không Còn Đường Về Nhà",tag:"action",id:"xSasYrFxbnE"},
+{title:"Nhiệm Vụ Bất Khả Thi",tag:"action",id:"G3G7QRs90HU"},
+{title:"Chiến Tranh Robot",tag:"action",id:"9rDQedYo27k"},
 
-  {title:"Video 7",img:"https://img.youtube.com/vi/HM5wSCdhW9E/hqdefault.jpg",video:"HM5wSCdhW9E"},
-  {title:"Video 8",img:"https://img.youtube.com/vi/_DeeahrurE8/hqdefault.jpg",video:"_DeeahrurE8"},
-  {title:"Video 9",img:"https://img.youtube.com/vi/uzonpxJMpQ4/hqdefault.jpg",video:"uzonpxJMpQ4"},
-  {title:"Video 10",img:"https://img.youtube.com/vi/zwOhNF7Sk7E/hqdefault.jpg",video:"zwOhNF7Sk7E"},
-  {title:"Video 11",img:"https://img.youtube.com/vi/DTNqbY-pPtg/hqdefault.jpg",video:"DTNqbY-pPtg"},
-  {title:"Video 12",img:"https://img.youtube.com/vi/x08ELZVwKeI/hqdefault.jpg",video:"x08ELZVwKeI"},
-  {title:"Video 13",img:"https://img.youtube.com/vi/zC48NrwCunY/hqdefault.jpg",video:"zC48NrwCunY"},
-  {title:"Video 14",img:"https://img.youtube.com/vi/MiT_sT9pMjg/hqdefault.jpg",video:"MiT_sT9pMjg"},
-  {title:"Video 15",img:"https://img.youtube.com/vi/qGqpCzhr3a8/hqdefault.jpg",video:"qGqpCzhr3a8"},
-  {title:"Video 16",img:"https://img.youtube.com/vi/lw9TWzPJ4z0/hqdefault.jpg",video:"lw9TWzPJ4z0"},
-  {title:"Video 17",img:"https://img.youtube.com/vi/ORIHXZykEk0/hqdefault.jpg",video:"ORIHXZykEk0"},
-  {title:"Video 18",img:"https://img.youtube.com/vi/ur1YsK5CI9M/hqdefault.jpg",video:"ur1YsK5CI9M"},
-  {title:"Video 19",img:"https://img.youtube.com/vi/1pHDXfr7BOw/hqdefault.jpg",video:"1pHDXfr7BOw"}
+{title:"Cuộc Đua Sinh Tử",tag:"action",id:"HM5wSCdhW9E"},
+{title:"Điệp Viên Bóng Tối",tag:"action",id:"_DeeahrurE8"},
+
+{title:"Đấu Trường Sinh Tử",tag:"war",id:"uzonpxJMpQ4"},
+{title:"Chiến Tranh Công Nghệ",tag:"war",id:"zwOhNF7Sk7E"},
+{title:"Rượt Đuổi Cảnh Sát",tag:"war",id:"DTNqbY-pPtg"},
+{title:"Thế Giới Zombie",tag:"war",id:"zC48NrwCunY"},
+{title:"Lực Lượng Đặc Nhiệm",tag:"war",id:"MiT_sT9pMjg"},
+{title:"Khu Vực Chiến Sự",tag:"war",id:"lw9TWzPJ4z0"},
+
+{title:"Điệp Viên Bí Mật",tag:"ai",id:"ORIHXZykEk0"},
+{title:"Trùm Cuối Trận Chiến",tag:"ai",id:"ur1YsK5CI9M"},
+{title:"Kết Thúc Chiến Binh",tag:"ai",id:"1pHDXfr7BOw"},
+{title:"Chiến Tranh Không Gian",tag:"ai",id:"zwOhNF7Sk7E"},
+{title:"Nhiệm Vụ Giải Cứu",tag:"ai",id:"qGqpCzhr3a8"}
 ];
 
-/* FAVORITE */
-let fav = JSON.parse(localStorage.getItem("fav")) || [];
+let current = movies;
 
-function saveFav(m){
-  if(!fav.find(f=>f.video===m.video)){
-    fav.push(m);
-    localStorage.setItem("fav",JSON.stringify(fav));
-    renderFav();
-  }
-}
-
-function removeFav(v){
-  fav = fav.filter(f=>f.video!==v);
-  localStorage.setItem("fav",JSON.stringify(fav));
-  renderFav();
-}
-
-function renderFav(){
-  let box=document.getElementById("favList");
-  box.innerHTML="";
-  fav.forEach(f=>{
-    box.innerHTML+=`
-    <img src="${f.img}">
-    <button onclick="removeFav('${f.video}')">❌</button>
-    `;
-  });
-}
-
-/* RENDER FIX */
-function render(){
+/* RENDER */
+function render(list){
   let box=document.getElementById("list");
   box.innerHTML="";
-
-  movies.forEach(m=>{
+  list.forEach(m=>{
     box.innerHTML+=`
-    <div class="card">
-      <img src="${m.img}" onclick="play('${m.video}')">
-      <button class="star" onclick='saveFav(${JSON.stringify(m)})'>⭐</button>
-    </div>
-    `;
+    <div class="card" onclick="play('${m.id}')">
+      <img src="https://img.youtube.com/vi/${m.id}/hqdefault.jpg">
+      <div class="title">${m.title}</div>
+    </div>`;
   });
+}
+
+/* FILTER */
+function setList(type){
+  if(type==="all") current=movies;
+  else current=movies.filter(m=>m.tag===type);
+  render(current);
+}
+
+/* SEARCH */
+function searchMovie(){
+  let v=document.getElementById("search").value.toLowerCase();
+  render(current.filter(m=>m.title.toLowerCase().includes(v)));
 }
 
 /* PLAY */
 function play(id){
   document.getElementById("modal").style.display="flex";
-  document.getElementById("frame").src =
-  "https://www.youtube.com/embed/"+id+"?autoplay=1";
+  document.getElementById("frame").src="https://www.youtube.com/embed/"+id+"?autoplay=1";
 }
 
-/* CLOSE */
 function closeM(){
   document.getElementById("modal").style.display="none";
   document.getElementById("frame").src="";
 }
 
-/* SEARCH */
-function searchYT(){
-  let q=document.getElementById("ytInput").value;
-  window.open("https://www.youtube.com/results?search_query="+encodeURIComponent(q),"_blank");
-}
-
-function searchZing(){
-  let q=document.getElementById("zingInput").value;
-  window.open("https://zingmp3.vn/tim-kiem/bai-hat.html?q="+encodeURIComponent(q),"_blank");
-}
-
-/* PLAYLIST */
-function openPlaylist(id){
-  window.open("https://www.youtube.com/playlist?list="+id,"_blank");
-}
-
-/* START */
-render();
-renderFav();
+render(current);
 
 </script>
 
