@@ -53,9 +53,9 @@ code{
 <div class="box">
 <h2>🔐 Admin</h2>
 <p>Tài khoản:</p>
-<code>Khangpanh68</code><br><br>
+<code>******</code><br><br>
 <p>Mật khẩu:</p>
-<code>51007Panh</code>
+<code>*******</code>
 </div>
 
 <div class="box">
