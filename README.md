@@ -1,93 +1,91 @@
-# 🎬 Khang Panh68 - Netflix Web Clone
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>README - Khang Panh68 Studio</title>
 
-🚀 Một website xem phim kiểu Netflix mini, chạy trực tiếp trên GitHub Pages.
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0b0b;
+  color:white;
+  padding:20px;
+}
 
----
+h1,h2{
+  color:red;
+}
 
-## 🌐 Demo Online
-👉 Sau khi bật GitHub Pages, web sẽ có dạng:
----
+.box{
+  background:#111;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:15px;
+}
 
-## ✨ Tính năng
+code{
+  background:#222;
+  padding:3px 6px;
+  border-radius:5px;
+}
+</style>
+</head>
 
-✔️ Giao diện Netflix (grid 3 cột)  
-✔️ Xem video YouTube trực tiếp  
-✔️ ⭐ Lưu phim yêu thích (LocalStorage)  
-✔️ 📂 Playlist YouTube  
-✔️ 🔎 Tìm kiếm YouTube  
-✔️ 🎧 Tìm kiếm Zing MP3  
-✔️ Responsive điện thoại + PC  
-✔️ Không cần backend / server  
+<body>
 
----
+<h1>🎬 KHANG PANH68 STUDIO</h1>
+<p>Web xem phim mini bằng HTML + JS</p>
 
-## 📂 Cấu trúc project
----
+<div class="box">
+<h2>🚀 Tính năng</h2>
+<ul>
+  <li>🎥 19 video gốc</li>
+  <li>🔎 Tìm kiếm phim</li>
+  <li>📂 Lọc theo thể loại</li>
+  <li>👑 Admin login</li>
+  <li>➕ Thêm phim</li>
+  <li>❌ Xóa phim (chỉ admin)</li>
+  <li>💾 Lưu bằng localStorage</li>
+</ul>
+</div>
 
-## 🚀 Cách chạy local
+<div class="box">
+<h2>🔐 Admin</h2>
+<p>Tài khoản:</p>
+<code>Khangpanh68</code><br><br>
+<p>Mật khẩu:</p>
+<code>51007Panh</code>
+</div>
 
-1. Tải project về
-2. Mở file `index.html`
-3. Chạy trực tiếp trên trình duyệt
+<div class="box">
+<h2>📦 Cách chạy</h2>
+<ol>
+  <li>Mở file <b>index.html</b></li>
+  <li>Chạy bằng Chrome / Acode</li>
+  <li>Hoặc upload lên web hosting</li>
+</ol>
+</div>
 
----
+<div class="box">
+<h2>⚠️ Lưu ý</h2>
+<ul>
+  <li>Nếu xóa localStorage → mất phim thêm</li>
+  <li>Video dùng YouTube ID</li>
+  <li>Chỉ admin mới xóa / thêm phim</li>
+</ul>
+</div>
 
-## 🌍 Deploy lên GitHub Pages
+<div class="box">
+<h2>👨‍💻 Tác giả</h2>
+<p>Khang Panh68</p>
+<p>Studio: Khang Panh68 Studio</p>
+</div>
 
-### Bước 1:
-Tạo repository mới trên GitHub
+<div class="box">
+<h2>📌 Phiên bản</h2>
+<p>Version: 1.0 FULL</p>
+</div>
 
-### Bước 2:
-Upload file `index.html`
-
-### Bước 3:
-Vào Settings → Pages:
-- Branch: `main`
-- Folder: `/root`
-
-### Bước 4:
-Truy cập link GitHub Pages
-
----
-
-## 🎬 Playlist hỗ trợ
-
-Web hỗ trợ mở playlist YouTube:
-
-- Playlist 1
-- Playlist 2
-- Playlist 3
-
----
-
-## ⚡ Công nghệ sử dụng
-
-- HTML5
-- CSS3 Grid
-- JavaScript Vanilla
-- YouTube Embed API
-- LocalStorage
-
----
-
-## 👨‍💻 Tác giả
-
-**Khang Panh68**
-
----
-
-## 📌 Ghi chú
-
-- Đây là project frontend thuần
-- Không lưu dữ liệu server
-- Dữ liệu favorite lưu trong trình duyệt
-
----
-
-## 🔥 Nâng cấp tương lai
-
-- AI gợi ý phim
-- Login user
-- Cloud save Firebase
-- App Android APK
-- Netflix UI full animation
+</body>
+</html>
