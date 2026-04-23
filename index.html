@@ -3,189 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Khang Panh68</title>
-
+<title>Khang Panh68 Studio - Cloud Full Sync</title>
 <style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#0b0b0b;
-  color:white;
-}
-
-/* HEADER */
-header{
-  background:#000;
-  padding:12px;
-  text-align:center;
-}
-
-.logo-box{
-  width:45px;
-  height:45px;
-  background:linear-gradient(45deg,red,darkred);
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-  margin:auto;
-  box-shadow:0 0 15px red;
-}
-
-/* MARQUEE */
-.marquee{
-  white-space:nowrap;
-  overflow:hidden;
-  background:#111;
-  color:red;
-  font-weight:bold;
-  padding:8px 0;
-}
-.marquee span{
-  display:inline-block;
-  padding-left:100%;
-  animation:run 12s linear infinite;
-}
-@keyframes run{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-100%);}
-}
-
-/* SEARCH */
-.bar{
-  padding:10px;
-  background:#1a1a1a;
-}
-.bar input{
-  width:100%;
-  padding:10px;
-  border:none;
-  border-radius:8px;
-}
-
-/* FILTER */
-.playlists{
-  display:flex;
-  gap:8px;
-  padding:10px;
-  overflow-x:auto;
-}
-.playlists button{
-  padding:8px 14px;
-  border:none;
-  border-radius:20px;
-  background:#333;
-  color:white;
-}
-
-/* ADD */
-.add-box{
-  padding:10px;
-  margin:10px;
-  background:#111;
-  border-radius:10px;
-  display:none;
-}
-.add-box input, .add-box select{
-  width:100%;
-  padding:8px;
-  margin:5px 0;
-}
-.add-box button{
-  width:100%;
-  padding:10px;
-  background:red;
-  border:none;
-  color:white;
-  border-radius:8px;
-}
-
-/* ADMIN */
-.admin-btn{
-  text-align:center;
-  margin:10px;
-}
-.admin-btn button{
-  background:#222;
-  border:1px solid red;
-  color:white;
-  padding:6px 10px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-  gap:10px;
-  padding:10px;
-}
-
-.card img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-  border-radius:10px;
-}
-.title{
-  text-align:center;
-  font-size:12px;
-}
-
-/* DELETE BUTTON */
-.del-btn{
-  width:100%;
-  padding:5px;
-  background:#b30000;
-  color:white;
-  border:none;
-  border-radius:6px;
-  margin-top:5px;
-}
-
-/* MODAL */
-#modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.95);
-  display:none;
-  align-items:center;
-  justify-content:center;
-}
-#modal iframe{
-  width:95%;
-  max-width:800px;
-  height:260px;
-  border:none;
-  border-radius:12px;
-}
-
-/* LOGIN */
-#loginBox{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.9);
-  align-items:center;
-  justify-content:center;
-}
-#loginBox div{
-  background:#111;
-  padding:20px;
-  border-radius:10px;
-  width:90%;
-  max-width:300px;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:15px;
-  font-size:12px;
-  color:#777;
-  border-top:1px solid #222;
-}
+/* CSS Giao diện chuyên nghiệp của Khang */
+body{ margin:0; font-family:Arial; background:#0b0b0b; color:white; overflow-x: hidden; }
+header{ background:#000; padding:15px; text-align:center; border-bottom: 2px solid red; }
+.logo-box{ width:45px; height:45px; background:linear-gradient(45deg,red,darkred); border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:bold; margin:auto; box-shadow:0 0 15px red; font-size: 20px; }
+.marquee{ white-space:nowrap; overflow:hidden; background:#111; color:red; font-weight:bold; padding:10px 0; border-bottom: 1px solid #222; }
+.marquee span{ display:inline-block; padding-left:100%; animation:run 15s linear infinite; }
+@keyframes run{ 0%{transform:translateX(0);} 100%{transform:translateX(-100%);} }
+.bar{ padding:15px; background:#1a1a1a; }
+.bar input{ width:100%; padding:12px; border:none; border-radius:8px; box-sizing: border-box; background:#333; color:white; outline: none; }
+.playlists{ display:flex; gap:10px; padding:10px; overflow-x:auto; scrollbar-width: none; }
+.playlists::-webkit-scrollbar { display: none; }
+.playlists button{ padding:10px 18px; border:none; border-radius:25px; background:#222; color:white; white-space: nowrap; cursor:pointer; border: 1px solid #444; transition: 0.3s; }
+.playlists button:active { background: red; border-color: red; }
+.add-box{ padding:15px; margin:15px; background:#111; border: 1px dashed red; border-radius:10px; display:none; }
+.add-box input, .add-box select{ width:100%; padding:10px; margin:5px 0; box-sizing: border-box; border-radius: 5px; border: 1px solid #333; background: #222; color: white; }
+.add-box button{ width:100%; padding:12px; background:red; border:none; color:white; border-radius:8px; font-weight: bold; margin-top: 10px; }
+.admin-btn{ text-align:center; margin:10px; }
+.admin-btn button{ background:transparent; border:1px solid red; color:red; padding:6px 15px; border-radius: 5px; cursor: pointer; font-size: 13px; }
+.grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:15px; padding:15px; }
+.card { background: #1a1a1a; border-radius: 12px; overflow: hidden; transition: 0.3s; }
+.card img{ width:100%; height:110px; object-fit:cover; cursor: pointer; }
+.card:hover { transform: translateY(-5px); }
+.title{ text-align:center; font-size:13px; padding:10px; height:35px; display: flex; align-items: center; justify-content: center; }
+.del-btn{ width:90%; padding:6px; background:#b30000; color:white; border:none; border-radius:6px; margin: 0 5% 10px 5%; cursor: pointer; font-size: 12px; }
+#modal{ position:fixed; inset:0; background:rgba(0,0,0,0.98); display:none; align-items:center; justify-content:center; z-index: 1000; }
+#modal iframe{ width:100%; max-width:800px; height:280px; border:none; box-shadow: 0 0 30px rgba(255,0,0,0.3); }
+#loginBox{ display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); align-items:center; justify-content:center; z-index: 1001; }
+#loginBox div{ background:#111; padding:25px; border-radius:15px; width:85%; max-width:320px; border: 1px solid red; }
+footer{ text-align:center; padding:25px; font-size:12px; color:#555; border-top:1px solid #222; margin-top: 20px; }
 </style>
 </head>
 
@@ -193,190 +41,210 @@ footer{
 
 <header>
   <div class="logo-box">KP</div>
-  <h2 style="color:red;">Khang Panh68 Studio</h2>
+  <h2 style="color:red; margin: 10px 0 0 0;">Khang Panh68 Studio</h2>
 </header>
 
 <div class="marquee">
-  <span>🔥 Hành động • ⚔️ Chiến tranh • 🤖 AI • 🎬 Khang Panh68 • </span>
+  <span>🔥 Hành động • ⚔️ Chiến tranh • 🤖 AI • 🎬 Khang Panh68 • 🚀 Cloud Save Hệ Thống Mới • </span>
 </div>
 
-<!-- ADMIN -->
 <div class="admin-btn">
-  <button onclick="openLogin()">🔐 Admin Login</button>
+  <button id="btnOpenLogin">🔐 Ông Trời</button>
 </div>
 
-<!-- SEARCH -->
 <div class="bar">
-  <input id="search" placeholder="🔎 Tìm phim..." oninput="searchMovie()">
+  <input id="search" placeholder="🔎 Tìm tên phim bạn muốn xem...">
 </div>
 
-<!-- FILTER -->
 <div class="playlists">
-  <button onclick="render(movies)">🔥 Tất cả</button>
-  <button onclick="filter('action')">💥 Hành động</button>
-  <button onclick="filter('war')">⚔️ Chiến tranh</button>
-  <button onclick="filter('ai')">🤖 AI</button>
+  <button id="btnFilterAll">🔥 Tất cả</button>
+  <button id="btnFilterAction">💥 Hành động</button>
+  <button id="btnFilterWar">⚔️ Chiến tranh</button>
+  <button id="btnFilterAI">🤖 AI</button>
 </div>
 
-<!-- ADD -->
-<div class="add-box">
-  <h3>➕ Thêm phim</h3>
-  <input id="title" placeholder="Tên phim">
-  <input id="vid" placeholder="YouTube ID">
-  <select id="tag">
+<div class="add-box" id="addBox">
+  <h3 style="color: red; margin-top: 0;">➕ Quản lý Cloud</h3>
+  <input id="newTitle" placeholder="Tên phim mới">
+  <input id="newVid" placeholder="YouTube Video ID">
+  <select id="newTag">
     <option value="action">Hành động</option>
     <option value="war">Chiến tranh</option>
     <option value="ai">AI</option>
   </select>
-  <button onclick="addMovie()">➕ Thêm</button>
+  <button id="btnAddMovie">LƯU LÊN CLOUD</button>
 </div>
 
-<!-- GRID -->
-<div class="grid" id="list"></div>
-
-<!-- PLAYER -->
-<div id="modal" onclick="closeM(event)">
-  <iframe id="frame"></iframe>
+<div class="grid" id="list">
+  <p style="text-align:center; width:100%; grid-column: 1/-1;">Đang tải dữ liệu từ Cloud...</p>
 </div>
 
-<!-- LOGIN -->
+<div id="modal">
+  <iframe id="frame" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
 <div id="loginBox">
   <div>
-    <h3>🔐 Admin Login</h3>
-    <input id="user" placeholder="Tài khoản">
+    <h3 style="text-align: center;">🔐 Ông Trời</h3>
+    <input id="user" placeholder="Tên đăng nhập">
     <input id="pass" type="password" placeholder="Mật khẩu">
-    <button onclick="login()" style="width:100%;padding:10px;background:red;color:white;margin-top:10px;">Đăng nhập</button>
-    <button onclick="closeLogin()" style="width:100%;padding:8px;margin-top:5px;background:#333;color:white;">Hủy</button>
+    <button id="btnLogin">XÁC NHẬN</button>
+    <button id="btnCloseLogin" style="background:#333; margin-top: 8px;">ĐÓNG</button>
   </div>
 </div>
 
 <footer>
-  © 2026 Khang Panh68 Studio – All rights reserved
+  © 2026 Khang Panh68 Studio <br> Dữ liệu được bảo mật trên Firebase Cloud
 </footer>
 
-<script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+  import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
-let isAdmin = false;
+  // --- 1. THAY MÃ CONFIG CỦA BẠN VÀO ĐÂY ---
+  const firebaseConfig = {
+    apiKey: "AIza...", 
+    authDomain: "khang-panh-68.firebaseapp.com",
+    projectId: "khang-panh-68",
+    storageBucket: "khang-panh-68.appspot.com",
+    messagingSenderId: "...",
+    appId: "..."
+  };
 
-/* 🔥 19 VIDEO GỐC */
-const DEFAULT_MOVIES = [
-{title:"Quá Nhanh Quá Nguy Hiểm",tag:"action",id:"eZO29UZ28M4"},
-{title:"Biệt Đội Siêu Anh Hùng",tag:"action",id:"9re7ISfjOkg"},
-{title:"John Wick",tag:"action",id:"AXHRGAfCIhE"},
-{title:"Người Nhện",tag:"action",id:"xSasYrFxbnE"},
-{title:"Nhiệm Vụ Bất Khả Thi",tag:"action",id:"G3G7QRs90HU"},
-{title:"Robot Chiến Tranh",tag:"action",id:"9rDQedYo27k"},
-{title:"Cuộc Đua Sinh Tử",tag:"action",id:"HM5wSCdhW9E"},
-{title:"Điệp Viên Bóng Tối",tag:"action",id:"_DeeahrurE8"},
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const docRef = doc(db, "studio_data", "movie_list");
 
-{title:"Đấu Trường Sinh Tử",tag:"war",id:"uzonpxJMpQ4"},
-{title:"Chiến Tranh Công Nghệ",tag:"war",id:"zwOhNF7Sk7E"},
-{title:"Rượt Đuổi Cảnh Sát",tag:"war",id:"DTNqbY-pPtg"},
-{title:"Zombie World",tag:"war",id:"zC48NrwCunY"},
-{title:"Lực Lượng Đặc Nhiệm",tag:"war",id:"MiT_sT9pMjg"},
-{title:"Khu Vực Chiến Sự",tag:"war",id:"lw9TWzPJ4z0"},
+  let movies = [];
+  let isAdmin = false;
 
-{title:"Điệp Viên Bí Mật",tag:"ai",id:"ORIHXZykEk0"},
-{title:"Trùm Cuối",tag:"ai",id:"ur1YsK5CI9M"},
-{title:"Kết Thúc Chiến Binh",tag:"ai",id:"1pHDXfr7BOw"},
-{title:"Chiến Tranh Không Gian",tag:"ai",id:"zwOhNF7Sk7E"},
-{title:"Nhiệm Vụ Giải Cứu",tag:"ai",id:"qGqpCzhr3a8"}
-];
+  // --- 2. DANH SÁCH 19 VIDEO GỐC ---
+  const DEFAULT_MOVIES = [
+    {title:"Quá Nhanh Quá Nguy Hiểm",tag:"action",id:"eZO29UZ28M4"},
+    {title:"Biệt Đội Siêu Anh Hùng",tag:"action",id:"9re7ISfjOkg"},
+    {title:"John Wick",tag:"action",id:"AXHRGAfCIhE"},
+    {title:"Người Nhện",tag:"action",id:"xSasYrFxbnE"},
+    {title:"Nhiệm Vụ Bất Khả Thi",tag:"action",id:"G3G7QRs90HU"},
+    {title:"Robot Chiến Tranh",tag:"action",id:"9rDQedYo27k"},
+    {title:"Cuộc Đua Sinh Tử",tag:"action",id:"HM5wSCdhW9E"},
+    {title:"Điệp Viên Bóng Tối",tag:"action",id:"_DeeahrurE8"},
+    {title:"Đấu Trường Sinh Tử",tag:"war",id:"uzonpxJMpQ4"},
+    {title:"Chiến Tranh Công Nghệ",tag:"war",id:"zwOhNF7Sk7E"},
+    {title:"Rượt Đuổi Cảnh Sát",tag:"war",id:"DTNqbY-pPtg"},
+    {title:"Zombie World",tag:"war",id:"zC48NrwCunY"},
+    {title:"Lực Lượng Đặc Nhiệm",tag:"war",id:"MiT_sT9pMjg"},
+    {title:"Khu Vực Chiến Sự",tag:"war",id:"lw9TWzPJ4z0"},
+    {title:"Điệp Viên Bí Mật",tag:"ai",id:"ORIHXZykEk0"},
+    {title:"Trùm Cuối",tag:"ai",id:"ur1YsK5CI9M"},
+    {title:"Kết Thúc Chiến Binh",tag:"ai",id:"1pHDXfr7BOw"},
+    {title:"Chiến Tranh Không Gian",tag:"ai",id:"zwOhNF7Sk7E"},
+    {title:"Nhiệm Vụ Giải Cứu",tag:"ai",id:"qGqpCzhr3a8"}
+  ];
 
-let movies = JSON.parse(localStorage.getItem("movies")) || DEFAULT_MOVIES;
-
-function save(){
-  localStorage.setItem("movies",JSON.stringify(movies));
-}
-
-/* RENDER */
-function render(list){
-  let box=document.getElementById("list");
-  box.innerHTML="";
-
-  list.forEach((m,i)=>{
-    box.innerHTML+=`
-    <div class="card">
-      <img onclick="play('${m.id}')" src="https://img.youtube.com/vi/${m.id}/hqdefault.jpg">
-      <div class="title">${m.title}</div>
-
-      ${isAdmin ? `<button class="del-btn" onclick="deleteMovie(${i})">❌ Xóa</button>` : ``}
-    </div>`;
+  // --- 3. ĐỒNG BỘ CLOUD ---
+  onSnapshot(docRef, (docSnap) => {
+    if (docSnap.exists()) {
+      const cloudData = docSnap.data().data || [];
+      // Tự động hồi phục nếu mây bị trống hoặc lỗi
+      if (cloudData.length === 0) {
+        movies = DEFAULT_MOVIES;
+        saveToCloud();
+      } else {
+        movies = cloudData;
+      }
+    } else {
+      movies = DEFAULT_MOVIES;
+      saveToCloud(); 
+    }
+    render(movies);
   });
-}
 
-/* DELETE */
-function deleteMovie(i){
-  if(confirm("Xóa phim này?")){
-    movies.splice(i,1);
-    save();
-    render(movies);
+  async function saveToCloud() {
+    try {
+      await setDoc(docRef, { data: movies });
+    } catch (e) { console.error(e); }
   }
-}
 
-/* FILTER */
-function filter(t){
-  render(movies.filter(m=>m.tag===t));
-}
-
-/* SEARCH */
-function searchMovie(){
-  let v=document.getElementById("search").value.toLowerCase();
-  render(movies.filter(m=>m.title.toLowerCase().includes(v)));
-}
-
-/* ADD */
-function addMovie(){
-  let t=document.getElementById("title").value;
-  let i=document.getElementById("vid").value;
-  let g=document.getElementById("tag").value;
-
-  if(!t||!i)return alert("Thiếu dữ liệu!");
-
-  movies.push({title:t,id:i,tag:g});
-  save();
-  render(movies);
-}
-
-/* PLAY */
-function play(id){
-  document.getElementById("modal").style.display="flex";
-  document.getElementById("frame").src="https://www.youtube.com/embed/"+id+"?autoplay=1";
-}
-
-function closeM(e){
-  if(e.target.id==="modal"){
-    document.getElementById("modal").style.display="none";
-    document.getElementById("frame").src="";
+  // --- 4. RENDER GIAO DIỆN ---
+  function render(list) {
+    const box = document.getElementById("list");
+    box.innerHTML = "";
+    if(list.length === 0) box.innerHTML = "<p>Trống...</p>";
+    
+    list.forEach((m, i) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="https://img.youtube.com/vi/${m.id}/hqdefault.jpg" onclick="window.playVideo('${m.id}')">
+        <div class="title">${m.title}</div>
+        ${isAdmin ? `<button class="del-btn" onclick="window.deleteMovie(${i})">❌ Gỡ khỏi Cloud</button>` : ""}
+      `;
+      box.appendChild(card);
+    });
   }
-}
 
-/* LOGIN */
-function openLogin(){
-  document.getElementById("loginBox").style.display="flex";
-}
-function closeLogin(){
-  document.getElementById("loginBox").style.display="none";
-}
+  // --- 5. LOGIC CHỨC NĂNG ---
+  window.deleteMovie = async (index) => {
+    if(confirm("Bạn có chắc chắn muốn xóa video này khỏi Cloud?")) {
+      movies.splice(index, 1);
+      await saveToCloud();
+    }
+  };
 
-function login(){
-  let u=document.getElementById("user").value;
-  let p=document.getElementById("pass").value;
+  document.getElementById("btnAddMovie").onclick = async () => {
+    const t = document.getElementById("newTitle").value;
+    const i = document.getElementById("newVid").value;
+    const g = document.getElementById("newTag").value;
+    if(!t || !i) return alert("Vui lòng điền đủ tên và ID video!");
+    
+    movies.push({title: t, id: i, tag: g});
+    await saveToCloud();
+    document.getElementById("newTitle").value = "";
+    document.getElementById("newVid").value = "";
+    alert("Đã lưu thành công!");
+  };
 
-  if(u==="Khangpanh68" && p==="51007Panh"){
-    isAdmin = true;
-    document.querySelector(".add-box").style.display="block";
-    render(movies);
-    closeLogin();
-    alert("✔ Admin đã bật!");
-  }else{
-    alert("Sai tài khoản!");
-  }
-}
+  window.playVideo = (id) => {
+    document.getElementById("modal").style.display = "flex";
+    document.getElementById("frame").src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+  };
 
-render(movies);
+  document.getElementById("modal").onclick = (e) => {
+    if(e.target.id === "modal") {
+      document.getElementById("modal").style.display = "none";
+      document.getElementById("frame").src = "";
+    }
+  };
+
+  // Login
+  document.getElementById("btnOpenLogin").onclick = () => document.getElementById("loginBox").style.display = "flex";
+  document.getElementById("btnCloseLogin").onclick = () => document.getElementById("loginBox").style.display = "none";
+  
+  document.getElementById("btnLogin").onclick = () => {
+    const u = document.getElementById("user").value;
+    const p = document.getElementById("pass").value;
+    if(u === "Khangpanh68" && p === "51007Panh") {
+      isAdmin = true;
+      document.getElementById("addBox").style.display = "block";
+      document.getElementById("loginBox").style.display = "none";
+      render(movies);
+      alert("Xác thực thành công! Quyền Admin đã mở.");
+    } else {
+      alert("Sai thông tin đăng nhập!");
+    }
+  };
+
+  // Search & Filter
+  document.getElementById("search").oninput = (e) => {
+    const v = e.target.value.toLowerCase();
+    render(movies.filter(m => m.title.toLowerCase().includes(v)));
+  };
+
+  document.getElementById("btnFilterAll").onclick = () => render(movies);
+  document.getElementById("btnFilterAction").onclick = () => render(movies.filter(m => m.tag === "action"));
+  document.getElementById("btnFilterWar").onclick = () => render(movies.filter(m => m.tag === "war"));
+  document.getElementById("btnFilterAI").onclick = () => render(movies.filter(m => m.tag === "ai"));
 
 </script>
-
 </body>
 </html>
